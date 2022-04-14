@@ -1,6 +1,7 @@
 add_exclude:
   - ".license_check.yaml"
-  - "Chart.yaml"
+  - "*/Chart.yaml"
+  - "*/cronjob.yaml"
+  - "*/values.yaml"
   - "cray-hms-creds-control.compatibility.yaml"
-  - "cronjob.yaml"
   - "ct.yaml"
