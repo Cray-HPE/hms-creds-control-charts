@@ -3,5 +3,7 @@ add_exclude:
   - "*/Chart.yaml"
   - "*/cronjob.yaml"
   - "*/values.yaml"
+  - "*/workflows/build_and_release_charts.yaml"
+  - "*/workflows/charts_lint_test_scan.yaml"
   - "cray-hms-creds-control.compatibility.yaml"
   - "ct.yaml"
