@@ -1,0 +1,13 @@
+apiVersion: v2
+name: "cray-hms-creds-control"
+version: 0.0.1
+description: "Kubernetes resources for cray-hms-creds-control"
+home: "https://github.com/Cray-HPE/hms-creds-control-charts"
+sources:
+  - "https://github.com/Cray-HPE/hms-creds-control"
+maintainers:
+  - name: Hardware Management
+    url: https://github.com/orgs/Cray-HPE/teams/hardware-management
+appVersion: "0.00.1"
+annotations:
+  artifacthub.io/license: "MIT"

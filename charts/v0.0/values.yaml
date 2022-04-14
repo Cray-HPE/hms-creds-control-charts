@@ -1,0 +1,8 @@
+---
+
+global:
+  appVersion: 0.00.1
+
+image:
+  repository: artifactory.algol60.net/csm-docker/stable/hms-creds-control
+  pullPolicy: IfNotPresent

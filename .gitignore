@@ -1,0 +1,10 @@
+# Helm
+.packaged
+*.tgz
+Chart.lock
+
+# VSCode
+.vscode
+
+# vim
+*.swp

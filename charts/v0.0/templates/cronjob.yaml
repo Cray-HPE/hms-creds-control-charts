@@ -1,0 +1,41 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: hms-creds-control
+  labels:
+    app: hms-creds-control
+spec:
+  suspend: false
+  schedule: "*/15 * * * *"
+  concurrencyPolicy: Forbid
+  successfulJobsHistoryLimit: 10
+  failedJobsHistoryLimit: 5
+  jobTemplate:
+    spec:
+      backoffLimit: 0
+      activeDeadlineSeconds: 300
+      template:
+        metadata:
+          labels:
+            app: hms-creds-control
+            cronjob-name: hms-creds-control
+        spec:
+          containers:
+            - name: hms-creds-control
+              image: {{ .Values.image.repository }}:{{ default .Values.global.appVersion .Values.image.tag }}
+              imagePullPolicy: {{ .Values.image.pullPolicy }}
+              env:
+                - name: HSM_URL
+                  value: "http://cray-smd"
+
+                - name: VAULT_ADDR
+                  value: "http://cray-vault.vault:8200"
+                - name: VAULT_SKIP_VERIFY
+                  value: "true"
+                - name: VAULT_BASE_PATH
+                  value: "secret"
+              securityContext:
+                runAsUser: 65534
+                runAsGroup: 65534
+                runAsNonRoot: true
+          restartPolicy: Never
