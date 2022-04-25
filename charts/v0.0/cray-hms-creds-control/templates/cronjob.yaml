@@ -34,6 +34,26 @@ spec:
                   value: "true"
                 - name: VAULT_BASE_PATH
                   value: "secret"
+                - name: XNAME_INCLUDE
+                  valueFrom:
+                    configMapKeyRef:
+                      name: hms-creds-control-config
+                      key: xname_include
+                - name: XNAME_EXCLUDE
+                  valueFrom:
+                    configMapKeyRef:
+                      name: hms-creds-control-config
+                      key: xname_exclude
+                - name: USERNAME_INCLUDE
+                  valueFrom:
+                    configMapKeyRef:
+                      name: hms-creds-control-config
+                      key: username_include
+                - name: USERNAME_EXCLUDE
+                  valueFrom:
+                    configMapKeyRef:
+                      name: hms-creds-control-config
+                      key: username_exclude
               securityContext:
                 runAsUser: 65534
                 runAsGroup: 65534
