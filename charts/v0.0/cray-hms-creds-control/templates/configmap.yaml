@@ -4,7 +4,7 @@ metadata:
   name: hms-creds-control-config
 data:
   xname_include: .*
-  xname_exclude:
+  xname_exclude: ''
   username_include: .*
-  username_exclude:
+  username_exclude: ''
 
