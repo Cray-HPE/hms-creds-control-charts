@@ -1,4 +1,5 @@
 add_exclude:
+  - ".license_check.yaml"
   - "*/Chart.yaml"
   - "*/configmap.yaml"
   - "*/cronjob.yaml"
