@@ -3,8 +3,9 @@ kind: ConfigMap
 metadata:
   name: hms-creds-control-config
 data:
-  xname_include: .*
+  enable_user_modifications: 'false'
+  xname_include: '.*'
   xname_exclude: ''
-  username_include: .*
+  username_include: '.*'
   username_exclude: ''
 

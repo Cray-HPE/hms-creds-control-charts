@@ -34,6 +34,11 @@ spec:
                   value: "true"
                 - name: VAULT_BASE_PATH
                   value: "secret"
+                - name: ENABLE_USER_MODIFICATIONS
+                  valueFrom:
+                    configMapKeyRef:
+                      name: hms-creds-control-config
+                      key: enable_user_modifications
                 - name: XNAME_INCLUDE
                   valueFrom:
                     configMapKeyRef:
