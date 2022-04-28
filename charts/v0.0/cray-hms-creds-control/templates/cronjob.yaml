@@ -34,11 +34,11 @@ spec:
                   value: "true"
                 - name: VAULT_BASE_PATH
                   value: "secret"
-                - name: ENABLE_USER_MODIFICATIONS
+                - name: USER_MODIFICATIONS_ENABLED
                   valueFrom:
                     configMapKeyRef:
                       name: hms-creds-control-config
-                      key: enable_user_modifications
+                      key: user_modifications_enabled
                 - name: XNAME_INCLUDE
                   valueFrom:
                     configMapKeyRef:
@@ -59,6 +59,16 @@ spec:
                     configMapKeyRef:
                       name: hms-creds-control-config
                       key: username_exclude
+                - name: PASSWORD_LENGTH
+                  valueFrom:
+                    configMapKeyRef:
+                      name: hms-creds-control-config
+                      key: password_length
+                - name: PASSWORD_POSSIBLE_CHARACTERS
+                  valueFrom:
+                    configMapKeyRef:
+                      name: hms-creds-control-config
+                      key: password_possible_characters
               securityContext:
                 runAsUser: 65534
                 runAsGroup: 65534
