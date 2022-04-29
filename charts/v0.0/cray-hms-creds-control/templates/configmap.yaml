@@ -3,11 +3,12 @@ kind: ConfigMap
 metadata:
   name: hms-creds-control-config
 data:
-  user_modifications_enabled: "false"
+  read_enabled: "false"
+  write_enabled: "false"
   xname_include: ".*"
   xname_exclude: ""
-  username_include: ".*"
+  username_include: "^Administrator|admin$"
   username_exclude: ""
   password_length: "15"
-  password_possible_characters: "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+  password_characters: "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 

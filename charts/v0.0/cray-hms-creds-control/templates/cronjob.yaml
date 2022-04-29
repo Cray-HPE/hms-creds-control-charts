@@ -27,18 +27,22 @@ spec:
               env:
                 - name: HSM_URL
                   value: "http://cray-smd"
-
                 - name: VAULT_ADDR
                   value: "http://cray-vault.vault:8200"
                 - name: VAULT_SKIP_VERIFY
                   value: "true"
                 - name: VAULT_BASE_PATH
                   value: "secret"
-                - name: USER_MODIFICATIONS_ENABLED
+                - name: READ_ENABLED
                   valueFrom:
                     configMapKeyRef:
                       name: hms-creds-control-config
-                      key: user_modifications_enabled
+                      key: read_enabled
+                - name: WRITE_ENABLED
+                  valueFrom:
+                    configMapKeyRef:
+                      name: hms-creds-control-config
+                      key: write_enabled
                 - name: XNAME_INCLUDE
                   valueFrom:
                     configMapKeyRef:
@@ -64,11 +68,11 @@ spec:
                     configMapKeyRef:
                       name: hms-creds-control-config
                       key: password_length
-                - name: PASSWORD_POSSIBLE_CHARACTERS
+                - name: PASSWORD_CHARACTERS
                   valueFrom:
                     configMapKeyRef:
                       name: hms-creds-control-config
-                      key: password_possible_characters
+                      key: password_characters
               securityContext:
                 runAsUser: 65534
                 runAsGroup: 65534
